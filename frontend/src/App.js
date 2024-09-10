@@ -3,6 +3,7 @@ import './App.css';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
+import Insights from './pages/Insights';
 import { useState } from 'react';
 import RefreshHandler from './RefreshHandler';
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/home' element={<PrivateRoute element={<Home />} />} />
+        <Route path="/insights" element={<Insights />} />
       </Routes>
     </div>
   );

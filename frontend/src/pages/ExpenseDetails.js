@@ -4,7 +4,7 @@ function ExpenseDetails({ incomeAmt, expenseAmt }) {
     return (
         <div>
             <div>
-                Your Balance is ₹ {incomeAmt - expenseAmt}
+                Current Balance Summary: ₹ {incomeAmt - expenseAmt}
             </div>
             {/* Show Income & Expense amount */}
             <div className="amounts-container">

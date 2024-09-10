@@ -15,6 +15,7 @@ html,
 body{
   height: 100vh;
   width: 100vw;
+ 
 }
 
 body{
@@ -22,6 +23,18 @@ body{
   justify-content: center;
   /* align-items: center; */
 }
+/* src/index.css or src/App.css */
+body {
+  background-color: #dedaed; /* Light grey background color */
+  /* background-image: url('./images/Screenshot\ 2024-09-10\ 184634.png'); */
+   /* Background image URL */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Optional: Set a default font for better readability */
+}
+
 
 .container{
   background-color: #FFF;
@@ -126,3 +139,74 @@ button{
   color: #c0392b;
   font-weight: bold;
 }
+
+
+
+
+/* css for bar chart of expense tracker */
+
+/* src/App.css */
+/* src/App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start (left) */
+  padding: 20px;
+  max-width: 800px; /* Same width for both containers */
+  border: 1px solid #ddd; /* Light border around the container */
+  border-radius: 8px; /* Rounded corners for the border */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better separation */
+  position: absolute; /* Use absolute positioning */
+  top: 150px; /* Distance from the top edge of the screen */
+  left: 350px; /* Distance from the left edge of the screen */
+}
+
+.app-containerpie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the end (right) */
+  padding: 20px;
+  max-width: 800px; /* Same width for both containers */
+  border: 1px solid #ddd; /* Light border around the container */
+  border-radius: 8px; /* Rounded corners for the border */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better separation */
+  position: absolute; /* Use absolute positioning */
+  top: 150px; /* Distance from the top edge of the screen */
+  right: 350px; /* Distance from the right edge of the screen */
+}
+
+.app-title {
+  font-size: 2rem;
+  color: #333; /* Dark color for better contrast */
+  margin-top: 30px;
+  margin-bottom: 20px; /* Space between title and chart */
+  text-align: left; /* Align text to the left */
+}
+
+@media (max-width: 768px) {
+  .app-container,
+  .app-containerpie {
+    max-width: 90%; /* Full width on smaller screens */
+    padding: 10px;
+    position: static; /* Remove absolute positioning on small screens */
+    top: auto; /* Reset top positioning */
+    left: auto; /* Reset left positioning */
+    right: auto; /* Reset right positioning */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .app-containerpie {
+    max-width: 90%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove left margin on small screens */
+    padding: 10px;
+  }
+}
+
+.user-section {
+  margin-top: 10px; /* Add a margin of 10px to the top of the div */
+}
+

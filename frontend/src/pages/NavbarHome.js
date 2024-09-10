@@ -1,6 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// import Insights from './Insights';
 
-function Navbar() {
+function Navbar({loggedInUser, handleLogout}) {
+
+    const logoutLinkStyle = {
+        backgroundColor: '#bf3d4a', // Set background color to red
+        color: 'white', // Text color for contrast
+        padding: '10px', // Padding for better spacing
+        textDecoration: 'none', // Remove underline from the link
+        borderRadius: '4px', // Optional: Add rounded corners
+        display: 'block', // Make the link take up the full width
+      };
+
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -13,15 +25,15 @@ function Navbar() {
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Track and manage your expenses</a>
         </li>
-        {/* <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> */}
+        <li className="nav-item">
+            <Link className="nav-link" to="/insights">Insights</Link>
+          </li>
         <li class="nav-item dropdown">
-          {/* <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Username
-          </a> */}
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {loggedInUser}
+          </a>
           <ul class="dropdown-menu">
-            {/* <li><a class="dropdown-item" href="#">Logout</a></li> */}
+            <li><a class="dropdown-item" href="#" onClick={handleLogout} style={logoutLinkStyle} >Logout</a></li>
             {/* <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"/></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li> */}

@@ -5,6 +5,7 @@ const cors = require("cors")
 const AuthRouter = require('./routes/AuthRouter')
 const ProductRouter = require('./routes/ProductRouter')
 const ExpenseRouter = require('./routes/ExpenseRouter');
+const InsightsRouter = require('./routes/InsightsRouter')
 const ensureAuthenticated = require("./middlewares/Auth");
 
 
@@ -19,6 +20,7 @@ app.use(cors())
 app.use('/auth',AuthRouter)// for any request followed by /auth ex: /auth/login or /auth/signup
 app.use('/products', ProductRouter )
 app.use('/expenses', ensureAuthenticated, ExpenseRouter)
+app.use('/insights',ensureAuthenticated, InsightsRouter)
 
 app.get("/ping", (req, res)=>{
     res.send("Pong");

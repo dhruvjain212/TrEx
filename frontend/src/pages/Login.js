@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
+import Navbar from './Navbar';
 
 function Login() {
 
@@ -57,6 +58,8 @@ function Login() {
     }
 
     return (
+        <>
+         <Navbar />
         <div className='container'>
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
@@ -78,7 +81,7 @@ function Login() {
                         name='password'
                         placeholder='Enter your password...'
                         value={loginInfo.password}
-                    />
+                        />
                 </div>
                 <button type='submit'>Login</button>
                 <span>Does't have an account ?
@@ -87,6 +90,7 @@ function Login() {
             </form>
             <ToastContainer />
         </div>
+        </>
     )
 }
 

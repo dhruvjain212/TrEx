@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import ExpenseTable from './ExpenseTable';
 import ExpenseDetails from './ExpenseDetails';
 import ExpenseForm from './ExpenseForm';
+import NavbarHome from './NavbarHome';
 
 function Home() {
     const [loggedInUser, setLoggedInUser] = useState('');
@@ -70,6 +71,7 @@ function Home() {
                 }
             }
             const response = await fetch(url, headers);
+            //console.log(response)
             if (response.status === 403) {
                 localStorage.removeItem('token');
                 navigate('/login');
@@ -116,10 +118,12 @@ function Home() {
     }, [])
 
     return (
+        <>
+         <NavbarHome loggedInUser={loggedInUser} handleLogout={handleLogout}/>
         <div>
             <div className='user-section'>
                 <h1>Welcome {loggedInUser}</h1>
-                <button onClick={handleLogout}>Logout</button>
+                {/* <button onClick={handleLogout}>Logout</button> */}
             </div>
             <ExpenseDetails
                 incomeAmt={incomeAmt}
@@ -132,9 +136,10 @@ function Home() {
             <ExpenseTable
                 expenses={expenses}
                 deleteExpens={deleteExpens}
-            />
+                />
             <ToastContainer />
         </div>
+    </>
     )
 }
 
