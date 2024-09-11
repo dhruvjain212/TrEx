@@ -119,7 +119,7 @@ function Home() {
 
     return (
         <>
-         <NavbarHome loggedInUser={loggedInUser} handleLogout={handleLogout}/>
+         <NavbarHome loggedInUser={loggedInUser} handleLogout={handleLogout} />
         <div>
             <div className='user-section'>
                 <h1>Welcome {loggedInUser}</h1>

@@ -26,7 +26,7 @@ function Navbar({loggedInUser, handleLogout}) {
           <a class="nav-link active" aria-current="page" href="#">Track and manage your expenses</a>
         </li>
         <li className="nav-item">
-            <Link className="nav-link" to="/insights">Insights</Link>
+            <Link className="nav-link" to="/insights"  >Insights</Link>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

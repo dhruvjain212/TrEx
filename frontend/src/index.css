@@ -206,7 +206,24 @@ button{
   }
 }
 
+
 .user-section {
   margin-top: 10px; /* Add a margin of 10px to the top of the div */
 }
 
+
+.app-container-tip {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; /* Align items to the start (left) */
+  padding: 20px;
+  max-width: 800px; /* Same width for both containers */
+  border-radius: 8px; /* Rounded corners for the border */
+  background-color: #f9f9f900; /* Light background color (corrected the color) */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+  /* Add shadow for better separation */
+  position: absolute; 
+  top: 500px; /* Distance from the top edge of the screen */
+  left: 50%; /* Center horizontally relative to the viewport */
+  transform: translateX(-50%); /* Adjust for centering */
+}
