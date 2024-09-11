@@ -14,6 +14,7 @@ const ExpenseTable = ({ expenses, deleteExpens }) => {
                         className="expense-amount"
                         style={{ color: expense.amount > 0 ? '#27ae60' : '#c0392b' }}
                     >₹{expense.amount}</div>
+                    <div className='expense-date'> {expense.createdAt.substring(0,10)}</div>
                 </div>
             ))}
         </div>
