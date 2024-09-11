@@ -3,7 +3,7 @@ import React from 'react'
 function Tip({ incomeAmt, expenseAmt, expenses }) {
 
     function getHighValueExpenses(expenses) {
-        const filteredExpenses = expenses.filter(expenses => expenses.amount < incomeAmt * 0.1);
+        const filteredExpenses = expenses.filter(expenses => expenses.amount < -(incomeAmt * 0.1));
         return filteredExpenses.map(expenses => expenses.text);
       }
   
