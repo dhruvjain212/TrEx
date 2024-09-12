@@ -8,6 +8,7 @@ import ExpenseDetails from './ExpenseDetails';
 import ExpenseForm from './ExpenseForm';
 import NavbarHome from './NavbarHome';
 
+
 function Home() {
     const [loggedInUser, setLoggedInUser] = useState('');
     const [expenses, setExpenses] = useState([]);
@@ -20,7 +21,7 @@ function Home() {
         setLoggedInUser(localStorage.getItem('loggedInUser'))
     }, [])
 
-    const handleLogout = (e) => {
+  const handleLogout = (e) => {
         localStorage.removeItem('token');
         localStorage.removeItem('loggedInUser');
         handleSuccess('User Loggedout');
@@ -119,7 +120,7 @@ function Home() {
 
     return (
         <>
-         <NavbarHome loggedInUser={loggedInUser} handleLogout={handleLogout} />
+         {/* <NavbarHome loggedInUser={loggedInUser} handleLogout={handleLogout} /> */}
         <div>
             <div className='user-section'>
                 <h1>Welcome {loggedInUser}</h1>

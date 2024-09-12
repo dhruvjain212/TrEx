@@ -1,8 +1,29 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 // import Insights from './Insights';
+import { useNavigate } from 'react-router-dom';
+import {  handleError, handleSuccess } from '../utils';
 
-function Navbar({loggedInUser, handleLogout}) {
+function Navbar() {
+  const [loggedInUser, setLoggedInUser] = useState('');
+  
+
+   
+  useEffect(() => {
+        setLoggedInUser(localStorage.getItem('loggedInUser'))
+  }, [])
+
+  const navigate = useNavigate();
+
+  const handleLogout = (e) => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('loggedInUser');
+    handleSuccess('User Loggedout');
+    setTimeout(() => {
+        navigate('/login');
+    }, 1000)
+}
+
 
     const logoutLinkStyle = {
         backgroundColor: '#bf3d4a', // Set background color to red
@@ -16,7 +37,7 @@ function Navbar({loggedInUser, handleLogout}) {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">TrEx</a>
+  <Link className="nav-link" to="/home" style={{ fontWeight: 'bold' }} >TrEx</Link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,6 +49,11 @@ function Navbar({loggedInUser, handleLogout}) {
         <li className="nav-item">
             <Link className="nav-link" to="/insights"  >Insights</Link>
           </li>
+
+          <li className="nav-item">
+            <Link className="nav-link" to="/bot"  >Talk to Tira</Link>
+          </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {loggedInUser}

@@ -13,9 +13,11 @@ import React, { useEffect, useState }from 'react';
 import ExpenseChart from './ExpenseChart';
 import ExpensePieChart from './ExpensePieChart';
 import Tip from './Tip';
+import NavbarHome from './NavbarHome';
 
 import { useNavigate } from 'react-router-dom';
 import {  handleError, handleSuccess } from '../utils';
+// import {handleLogout} from './Home';
 
 const App = () => {
 
@@ -66,6 +68,7 @@ useEffect(() => {
 
   return (
     <>
+    {/* <NavbarHome loggedInUser={loggedInUser}  handleLogout={handleLogout}/> */}
      <h1 className="app-title">Your Income and Expenses</h1>
     <div className="app-container">
     <ExpenseChart />
