@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import ExpenseTable from './ExpenseTable';
 import ExpenseDetails from './ExpenseDetails';
 import ExpenseForm from './ExpenseForm';
-import NavbarHome from './NavbarHome';
+// import NavbarHome from './NavbarHome';
 
 
 function Home() {
@@ -21,14 +21,17 @@ function Home() {
         setLoggedInUser(localStorage.getItem('loggedInUser'))
     }, [])
 
-  const handleLogout = (e) => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('loggedInUser');
-        handleSuccess('User Loggedout');
-        setTimeout(() => {
-            navigate('/login');
-        }, 1000)
-    }
+//   const handleLogout = (e) => {
+//         localStorage.removeItem('token');
+//         localStorage.removeItem('loggedInUser');
+//         handleSuccess('User Loggedout');
+//         setTimeout(() => {
+//             navigate('/login');
+//         }, 1000)
+//     }
+//this functionality of handleLogout has been shifted to NavbarHome component
+
+
     useEffect(() => {
         const amounts = expenses.map(item => item.amount);
         const income = amounts.filter(item => item > 0)

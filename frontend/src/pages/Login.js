@@ -59,7 +59,7 @@ function Login() {
 
     return (
         <>
-         {/* <Navbar /> */}
+         <Navbar />
         <div className='container'>
             <h1>Login</h1>
             <form onSubmit={handleLogin}>

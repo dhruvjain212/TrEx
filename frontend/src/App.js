@@ -14,7 +14,7 @@ import Navbar from './pages/NavbarHome';
 const AppLayout = ({ children }) => {
   const location = useLocation();
   // Hide navbar on the signup page
-  const showNavbar = location.pathname !== '/signup';
+  const showNavbar = location.pathname !== '/login' && location.pathname !== '/signup' ;
 
   return (
     <>

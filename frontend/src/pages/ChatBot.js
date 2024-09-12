@@ -2,12 +2,11 @@ import React from 'react';
 
 const ChatBot = () => {
   return (
-    <div style={{  display: 'flex', justifyContent: 'center', alignItems: 'center', height: '500px' }}>
-      <iframe
-        src="https://webchat.botframework.com/embed/your-bot-id?s=YOUR_SECRET_KEY"
-        style={{ minWidth: '400px', width: '100%', minHeight: '500px' }}
-        frameBorder="0"
-      ></iframe>
+    <div className="chatbot-container" >
+      <iframe src="https://webchat.botframework.com/embed/Abhi-Chatbot-bot?s=4Q_qJ8Cyq_E.voI5jzzsOUOMyooaHAqVoYRnP9MO8KfOfvpDovDP1xQ"
+     className="chatbot-iframe"
+     style={{ backgroundColor: '#29494a' }}> 
+     </iframe>
     </div>
   );
 };
